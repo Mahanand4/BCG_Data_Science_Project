@@ -52,3 +52,9 @@ The Random Forest model was evaluated using:
 ## Conclusion
 
 The project demonstrates an end-to-end data science workflow, from data exploration and feature engineering to predictive modelling and evaluation.
+
+## Certificate
+
+[BCG Data Science Virtual Experience Certificate](BCG%20Certificate.pdf)
+
+
