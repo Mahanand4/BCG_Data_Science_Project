@@ -307,7 +307,7 @@ Feature importance helps identify the variables that were most useful for predic
 
 These values should be interpreted as model-based predictive importance and should not be considered proof of causation.
 
-**Insert the actual feature-importance ranking from the completed modelling notebook here.**
+
 
 ## Challenges
 
