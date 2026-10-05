@@ -283,7 +283,31 @@ It consists of:
 
 The confusion matrix is particularly important for this project because the churn class represents only 9.72% of customers.
 
-**Insert the actual confusion matrix from the completed modelling notebook here.**
+The confusion matrix for the Random Forest model is:
+
+| | Predicted Retained | Predicted Churn |
+|---|---:|---:|
+| **Actual Retained** | 3,282 | 4 |
+| **Actual Churn** | 347 | 19 |
+
+The confusion matrix consists of:
+
+- True Negatives (TN): 3,282
+- False Positives (FP): 4
+- False Negatives (FN): 347
+- True Positives (TP): 19
+
+The model correctly identified 19 churned customers but missed 347 actual churned customers. This explains the low recall of 5.19% and indicates that improving the identification of actual churners is an important area for future model improvement.
+
+## Feature Importance
+
+The Random Forest model provides feature importance values that show which variables contributed most to the model's predictions.
+
+Feature importance helps identify the variables that were most useful for predicting customer churn.
+
+These values should be interpreted as model-based predictive importance and should not be considered proof of causation.
+
+**Insert the actual feature-importance ranking from the completed modelling notebook here.**
 
 ## Challenges
 
