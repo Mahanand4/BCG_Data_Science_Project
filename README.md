@@ -247,6 +247,44 @@ This represents the range of off-peak variable prices for each customer.
 
 ---
 
+## Baseline Model
+
+Because the churn dataset is highly imbalanced, a majority-class baseline provides an important reference point.
+
+The majority class is retained customers, representing 90.28% of the dataset.
+
+This demonstrates why accuracy alone is not sufficient for evaluating a churn prediction model. The final Random Forest model should therefore be compared using precision, recall and F1 score in addition to accuracy.        
+
+## Evaluation Methodology
+
+The model was evaluated on the unseen test dataset using multiple classification metrics.
+
+The following measures were considered:
+
+- Accuracy
+- Precision
+- Recall
+- F1 Score
+- Confusion Matrix
+- Feature Importance
+
+Because the churn dataset is imbalanced, particular attention was given to precision, recall and F1 score rather than relying only on accuracy.
+
+## Confusion Matrix
+
+The confusion matrix was used to evaluate how well the Random Forest model classified retained and churned customers.
+
+It consists of:
+
+- True Negatives (TN)
+- False Positives (FP)
+- False Negatives (FN)
+- True Positives (TP)
+
+The confusion matrix is particularly important for this project because the churn class represents only 9.72% of customers.
+
+**Insert the actual confusion matrix from the completed modelling notebook here.**
+
 ## Challenges
 
 During the analysis and modelling process, several challenges were considered:
@@ -356,8 +394,18 @@ Business teams should combine:
 - Customer value
 - Business knowledge
 
-
 ---
+
+## Model Limitations
+
+- The churn dataset is highly imbalanced, with only 9.72% of customers classified as churned.
+- The model achieved high accuracy of 90.39%, but recall was only 5.19%, meaning that many actual churners were not identified.
+- Accuracy alone is not sufficient for evaluating this imbalanced classification problem.
+- The Random Forest model may require further hyperparameter tuning and comparison with other machine-learning algorithms.
+- The model was evaluated using a 75:25 train-test split; additional cross-validation could provide a more robust evaluation.
+- Statistical associations identified during the analysis should not be interpreted as causal relationships.
+- The current model should be used as a decision-support tool rather than as a standalone automated churn-detection system.
+- Further improvement using class-imbalance techniques, classification-threshold optimisation and additional evaluation metrics is recommended.
 
 ## GitHub Repository Link:
 https://github.com/Mahanand4/BCG_Data_Science_Project
