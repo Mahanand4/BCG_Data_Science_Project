@@ -250,15 +250,11 @@ This represents the range of off-peak variable prices for each customer.
 ## Baseline Model
 
 Because the churn dataset is highly imbalanced, a majority-class baseline provides an important reference point.
-
 The majority class is retained customers, representing 90.28% of the dataset.
-
 This demonstrates why accuracy alone is not sufficient for evaluating a churn prediction model. The final Random Forest model should therefore be compared using precision, recall and F1 score in addition to accuracy.        
 
 ## Evaluation Methodology
-
 The model was evaluated on the unseen test dataset using multiple classification metrics.
-
 The following measures were considered:
 
 - Accuracy
@@ -269,6 +265,21 @@ The following measures were considered:
 - Feature Importance
 
 Because the churn dataset is imbalanced, particular attention was given to precision, recall and F1 score rather than relying only on accuracy.
+
+| Metric | Score |
+|--------|-------|
+| Accuracy | 90.39% |
+| Precision | 82.61% |
+| Recall | 5.19% |
+| F1 Score | 9.77% |
+
+### Interpretation
+
+The model achieved an accuracy of approximately 90.39% and a precision of 82.61%. However, the recall was only 5.19%, and the F1-score was 9.77%.The high accuracy is influenced by the large number of non-churn customers correctly classified by the model. However, the low recall indicates that the model is missing a large proportion of customers who actually churn.For a customer churn prediction problem, recall is particularly important because identifying customers who are likely to churn can help the business take preventive actions.
+
+### Areas for Improvement
+
+The model performance could be improved by addressing class imbalance, tuning the Random Forest hyperparameters, and experimenting with additional feature engineering techniques.
 
 ## Confusion Matrix
 
@@ -299,14 +310,43 @@ The confusion matrix consists of:
 
 The model correctly identified 19 churned customers but missed 347 actual churned customers. This explains the low recall of 5.19% and indicates that improving the identification of actual churners is an important area for future model improvement.
 
+## Model Evaluation
+
+The Random Forest Classifier was evaluated using a confusion matrix, accuracy, precision, recall, and F1-score.
+
+### Confusion Matrix
+
+The confusion matrix obtained from the test dataset is:
+
+| | Predicted: No Churn | Predicted: Churn |
+|--------------------|---------------------|------------------|
+| Actual: No Churn | 3282 | 4 |
+| Actual: Churn | 347 | 19 |
+
+The model correctly predicted 3,282 customers who did not churn and 19 customers who actually churned. However, it incorrectly classified 347 actual churners as non-churners.
+
+
 ## Feature Importance
 
 The Random Forest model provides feature importance values that show which variables contributed most to the model's predictions.
-
 Feature importance helps identify the variables that were most useful for predicting customer churn.
-
 These values should be interpreted as model-based predictive importance and should not be considered proof of causation.
 
+## Connecting Model Output to the Business Problem
+
+The business objective is to identify customers who may be at risk of churning so that the business can take proactive retention actions.The Random Forest model achieved 90.39% accuracy and 82.61% precision. However, its recall was only 5.19%, indicating that the model identifies only a small proportion of customers who actually churn.Therefore, the current model should not be used as a standalone churn-detection system.
+
+The model can instead be used as a decision-support tool together with:
+
+- Customer behaviour
+- Consumption patterns
+- Pricing information
+- Customer tenure
+- Financial indicators
+- Business knowledge
+
+Improving recall should be a key priority because missing an actual churner can result in a missed opportunity for customer retention.
+Future model improvements should therefore focus on identifying more actual churners while maintaining an acceptable level of precision.
 
 
 ## Challenges
